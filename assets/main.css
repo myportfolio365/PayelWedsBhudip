@@ -291,7 +291,7 @@ svg.icon-svg{
 /*Gift section*/
 
 section#gift:after{
-  background-image: url(../assets/svg/pattern.svg);
+  
   background-repeat: repeat;
   position: absolute;
   content: "";
