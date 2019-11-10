@@ -13,7 +13,6 @@
       <link href="./assets/main.css" rel="stylesheet" type="text/css" media="all">
       <!-- <link href="./assets/magnific-popup.css" rel="stylesheet" type="text/css" media="all"> -->
       <!-- <link href="./assets/fonts.css" rel="stylesheet" type="text/css" media="all"> -->
-      
    </head>
    <body>
       <!-- Preloader -->
@@ -97,8 +96,32 @@
                      <div class="pr-md-4">
                         <h1 class="font-secondary display-4">Save the date</h1>
                         <p class="lead font-weight-300 text-dark-gray opacity-8">Wednesday December 11th, 2019 - Swamiji Sporting Club, Howrah.</p>
-                        <div class="countdown row text-center"><div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter text-primary mb-1 ">33</span>
-                          <span class="label ">Day</span></div></div> <div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter text-primary mb-1">01</span> <span class="label">Hour</span></div></div> <div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter text-primary mb-1">53</span> <span class="label">Minutes</span></div></div> <div class="col"><div class="card card-body countdown-shadow p-3"><span class="counter text-primary mb-1">59</span> <span class="label">Seconds</span></div></div></div>
+                        <div class="countdown row text-center">
+                           <div class="col">
+                              <div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3">
+                                 <span class="counter text-primary mb-1 " id="days"></span>
+                                 <span class="label ">Day</span>
+                              </div>
+                           </div> 
+                           <div class="col">
+                              <div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3">
+                                 <span class="counter text-primary mb-1" id="hours"></span> 
+                                 <span class="label">Hour</span>
+                              </div>
+                           </div> 
+                           <div class="col">
+                              <div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3">
+                                 <span class="counter text-primary mb-1" id="minutes"></span>
+                                 <span class="label">Minutes</span>
+                              </div>
+                           </div> 
+                           <div class="col">
+                              <div class="card card-body countdown-shadow p-3">
+                                 <span class="counter text-primary mb-1" id="seconds"></span> 
+                                 <span class="label">Seconds</span>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                   </div>
                   <div class="col-md-6">
@@ -1241,7 +1264,7 @@
                <!--End row-->
                <div class="row text-center">
                   <div class="col-md-6 mb-3 mb-md-0 ">
-                     <img src="assets/img/swamiji.jpg" alt="Image" class=" rounded img-fluid">
+                     <img src="./assets/img/swamiji.jpg" alt="Image" class=" rounded img-fluid">
                      <div class="badge-overlap">
                         <span class="badge">Wedding Ceremony Hall</span>
                      </div>
@@ -1256,7 +1279,7 @@
                      </iframe>
                   </div>
                   <div class="col-md-6 mb-3 mb-md-0 ">
-                     <img src="assets/img/Chowdhury.jpeg" alt="" class="rounded img-fluid">
+                     <img src="./assets/img/Chowdhury.jpeg" alt="" class="rounded img-fluid">
                      <div class="badge-overlap ">
                         <span class="badge">Wedding Reception Hall</span>
                      </div>
@@ -1545,10 +1568,41 @@
       <script src="./assets/bootstrap.min.js"></script>
       <script src="./assets/smooth-scroll.js"></script>
       <script src="./assets/jquery.magnific-popup.min.js"></script>
-      <script src="./assets/jquery.countdown.min.js"></script>
       <script src="./assets/placeholders.min.js"></script>
-      <script src="./assets/instafeed.min.js"></script>
       <script src="./assets/script.js"></script>
+      <script>
+         // Set the date we're counting down to
+var countDownDate = new Date("Dec 11, 2019 07:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+      </script>
+      
       <!-- Google analytics -->
       <!-- End google analytics -->
 
