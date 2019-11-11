@@ -1,6 +1,7 @@
 function postToGoogle() {
     var field1 = $("#nameField").val();
     var field2 = $("#emailField").val();
+    var field3 = $('input[name=WeddStatus]:checked').val();
     
      
     if(field1 == ""){
@@ -13,9 +14,15 @@ function postToGoogle() {
         document.getElementById("emailField").focus();
         return false;
     }
+    if(field3 == null){
+        alert('Please choose one option');
+        document.getElementById("atttending-yes").focus();
+        document.getElementById("atttending-no").focus();
+        return false;
+    }
     $.ajax({
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSfp3acE0Y4dW3SMEaGndAvTpHdSqq8Pn4aQPvG0A_T7YKW3mQ/formResponse",
-        data: {"entry.1403359363": field1, "entry.1913948657": field2,},
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSd1P6wQQp_8CQcDTJhMeCdDO369-fqHShsUjawaLfhLmI4aEQ/formResponse",
+        data: {"entry.10585789": field1, "entry.236451525": field2,"entry.1704008836": field3},
         type: "POST",
         dataType: "xml",
         success: function(d)
@@ -23,7 +30,7 @@ function postToGoogle() {
         },
         error: function(x, y, z)
             { 
-                alert('Sucessfully submitted Response'); 
+                alert("Response is successfully submitted");
             }
     });
     return false;
