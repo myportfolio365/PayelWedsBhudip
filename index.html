@@ -1102,14 +1102,16 @@
                <!--End row-->
                <div class="row justify-content-center">
                   <div class="col-xl-5 col-lg-5 col-md-6">
-                     <form method="post">
+                     <form id="form" target="_self" onsubmit="return postToGoogle();" action="" autocomplete="off">
                         <div class="form-group">
                            <label>Your Name</label>
-                           <input name="name" type="text" class="form-control form-control-lg" placeholder="Your name">
+                           <input name="entry.1403359363" type="text" class="form-control form-control-lg" placeholder="Your name"
+                           id="nameField">
                         </div>
                         <div class="form-group">
                            <label>Email Address</label>
-                           <input name="email" type="email" class="form-control form-control-lg" placeholder="Your email">
+                           <input name="entry.1913948657" type="email" class="form-control form-control-lg" placeholder="Your email"
+                           id="emailField">
                         </div>
                         <div class="row">
                            <div class="col-12">
@@ -1120,19 +1122,22 @@
                            <div class="col">
                               <div class="form-group rounded bg-white p-2 border">
                                  <div class="custom-control custom-radio">
-                                    <input type="radio" id="atttending-yes" name="atttending" class="custom-control-input">
-                                    <label class="custom-control-label" for="atttending-yes">Yes, I will be there</label>
+                                    <input type="radio" id="atttending-yes" class="custom-control-input">
+                                    <label class="custom-control-label" for="atttending-yes"
+                                    value="Yes, I will be there">Yes, I will be there</label>
                                  </div>
                               </div>
                            </div>
                            <div class="col">
                               <div class="form-group rounded bg-white p-2 border">
                                  <div class="custom-control custom-radio">
-                                    <input type="radio" id="atttending-no" name="atttending" class="custom-control-input">
-                                    <label class="custom-control-label" for="atttending-no">Sorry, I can't come</label>
+                                    <input type="radio" id="atttending-no" class="custom-control-input">
+                                    <label class="custom-control-label" for="atttending-no"
+                                    value="Sorry, I can't come">Sorry, I can't come</label>
                                  </div>
                               </div>
                            </div>
+                           
                         </div>
                         <div class="form-group text-center">
                            <button class="btn btn-lg btn-block btn-primary" type="submit">Confirm registry</button>
@@ -1570,6 +1575,7 @@
       <script src="./assets/jquery.magnific-popup.min.js"></script>
       <script src="./assets/placeholders.min.js"></script>
       <script src="./assets/script.js"></script>
+      <script src="./assets/scripts/formsubmission.js"></script>
       <script>
          // Set the date we're counting down to
 var countDownDate = new Date("Dec 11, 2019 07:37:25").getTime();
